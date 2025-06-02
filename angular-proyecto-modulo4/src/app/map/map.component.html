@@ -1,0 +1,10 @@
+<mgl-map
+  [style]="style"
+  [zoom]="[zoom]"
+  [center]="[lng, lat]"
+  (load)="map = $event.target">
+  <mgl-marker
+    [lngLat]="[lng, lat]"
+    (click)="showPopup(map, $event)">
+  </mgl-marker>
+</mgl-map>

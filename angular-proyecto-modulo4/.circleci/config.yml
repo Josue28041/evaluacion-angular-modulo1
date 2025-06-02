@@ -1,0 +1,11 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: cimg/node:20.3.0
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run test -- --watch=false --browsers=ChromeHeadless
+      - run: npm run cy:run
